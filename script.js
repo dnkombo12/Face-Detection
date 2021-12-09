@@ -25,7 +25,12 @@ const detectFaces = async () => {
         ctx.beginPath();
         ctx.lineWidth = "4";
         ctx.strokeStyle = "blue";
-        ctx.rect( 10, 20, 150, 100 );
+        ctx.rect( 
+            pred.topLeft[0],
+            pred.topLeft[1],
+            pred.bottomRight[0] - pred.topLeft[0],
+            pred.bottomRight[1] - pred.topLeft[1]
+            );
         ctx.stroke();
 
         ctx.fillStyle = "red";
